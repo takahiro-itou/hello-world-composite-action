@@ -23,13 +23,18 @@ runs:
         ls -R
       shell : bash
 
+    - name : Random Number Generator
+      run  : |
+        echo "$(echo $RANDOM)" | tee init/random.txt
+      shell : bash
+
     - name : Set Greeting
       run  : echo "Hello $INPUT_WHO_TO_GREET."
       shell : bash
       env  :
         INPUT_WHO_TO_GREET : ${{ inputs.who-to-greet }}
 
-    - name : Random Number Generator
+    - name : Read Random Number
       id   : random-number-generator
       run  : echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
       shell : bash
