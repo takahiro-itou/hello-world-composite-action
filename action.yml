@@ -36,7 +36,9 @@ runs:
 
     - name : Read Random Number
       id   : random-number-generator
-      run  : echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
+      run  : |
+        random_value=$(cat init/random.txt)
+        echo "random-number=${random_value}" >> $GITHUB_OUTPUT
       shell : bash
 
     - name : Set GitHub Path
