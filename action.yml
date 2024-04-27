@@ -12,6 +12,9 @@ outputs :
   random-number :
     description : "Random number"
     value : ${{ steps.random-number-generator.outputs.random-number }}
+  common-values :
+    description : "Cached common values"
+    value : ${{ steps.common-number.outputs.common-values }}
 
 runs:
   using : "composite"
@@ -61,8 +64,8 @@ runs:
     - name : Read Common Value
       id   : common-number
       run  : |
-        common_value=$(cat init/cached-common-value.txt)
-        echo "common-value=${common_value=$}" >> $GITHUB_OUTPUT
+        common_values=$(cat init/cached-common-value.txt)
+        echo "common-valuse=${common_values=$}" >> $GITHUB_OUTPUT
       shell : bash
 
     - name : Set GitHub Path
