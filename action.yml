@@ -1,6 +1,7 @@
 
-name : 'Hello World'
+name   : 'Hello World and Cache Test'
 description : 'Greet someone'
+author : 'Takahiro Itou'
 
 inputs :
   who-to-greet : # id of input
@@ -85,3 +86,7 @@ runs:
     - name : Run goodbye.sh
       run  : goodbye.sh
       shell : bash
+
+branding:
+  icon  : 'check-circle'
+  color : 'green'
