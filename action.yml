@@ -23,6 +23,15 @@ runs:
         ls -alR
       shell : bash
 
+    - name : Cache Common Value
+      id   : cache-common-value
+      uses : actions/cache@v3
+      env  :
+        cache-name : cache-common-value
+      with :
+        path : init/cached-common-value.txt
+        key  : ${{ runner.os }}-${{ env.cache-name }}
+
     - name : Random Number Generator
       run  : |
         echo "$(echo $RANDOM)" | tee init/random.txt
