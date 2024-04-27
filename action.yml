@@ -48,7 +48,9 @@ runs:
 
     - name : Random Number Generator
       run  : |
-        echo "$(echo $RANDOM)" | tee init/random.txt
+        if [[ ! -f init/random.txt ]] ; then
+          echo "$(echo $RANDOM)" | tee init/random.txt
+        fi
       shell : bash
 
     - name : Set Greeting
