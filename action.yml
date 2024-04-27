@@ -20,7 +20,7 @@ runs:
       run  : |
         pwd
         mkdir -p init
-        ls -R
+        ls -alR
       shell : bash
 
     - name : Random Number Generator
