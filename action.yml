@@ -67,7 +67,7 @@ runs:
         common_values=$(cat init/cached-common-value.txt)
         common_value=$(echo "${common_value}" | head -n 1)
         cached_date=$(echo "${common_value}"  | tail -n 1)
-        echo "common-valuse=${common_values}" >> $GITHUB_OUTPUT
+        echo "common-valuse=${common_value}" >> $GITHUB_OUTPUT
         # echo "cached-date=${cached_date}"     >> ${GITHUB_OUTPUT}
       shell : bash
 
