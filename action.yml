@@ -37,7 +37,7 @@ runs:
         echo "$(echo $RANDOM)" | tee init/cached-common-value.txt
         date | tee -a init/cached-common-value.txt
         ls -l init/
-        shell : bash
+      shell : bash
 
     - name : Random Number Generator
       run  : |
