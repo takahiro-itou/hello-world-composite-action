@@ -58,6 +58,13 @@ runs:
         echo "random-number=${random_value}" >> $GITHUB_OUTPUT
       shell : bash
 
+    - name : Read Common Value
+      id   : common-number
+      run  : |
+        common_value=$(cat init/cached-common-value.txt)
+        echo "common-value=${common_value=$}" >> $GITHUB_OUTPUT
+      shell : bash
+
     - name : Set GitHub Path
       run  : echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
       shell : bash
