@@ -12,9 +12,12 @@ outputs :
   random-number :
     description : "Random number"
     value : ${{ steps.random-number-generator.outputs.random-number }}
-  common-values :
-    description : "Cached common values"
-    value : ${{ steps.common-number.outputs.common-values }}
+  common-value :
+    description : "Cached common value"
+    value : ${{ steps.common-number.outputs.common-value }}
+  cached-date  :
+    description : "Cache create date/time"
+    value : ${{ steps.common-number.outputs.cached-date }}
 
 runs:
   using : "composite"
