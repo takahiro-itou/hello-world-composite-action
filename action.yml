@@ -32,7 +32,8 @@ runs:
         path : init/cached-common-value.txt
         key  : ${{ runner.os }}-${{ env.cache-name }}
 
-    - name : Write Cache
+    - if : ${{ steps.cache-common-value.outputs.cache-hit != 'true' }}
+      name : Write Cache
       run  : |
         echo "$(echo $RANDOM)" | tee init/cached-common-value.txt
         date | tee -a init/cached-common-value.txt
